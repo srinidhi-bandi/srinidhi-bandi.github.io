@@ -19,4 +19,14 @@ caption {
   border-collapse: separate;
   padding: 0.5rem;
 }
-
+.links {
+  a {
+    color: blue;
+  }
+  a:visited {
+    color: blue;
+  }
+  a:hover {
+    color: darkorange;
+  }
+}
