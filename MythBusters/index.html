@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MythBusters Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Full-page background */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Ensures proper scaling on all screen sizes */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background video container */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Video element */
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top; /* Keeps the top part of the video visible */
+        }
+
+        /* Dark overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        /* Main content */
+        .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            max-width: 90%;
+        }
+
+        /* Responsive Typography */
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        /* Button styling */
+        .start-btn {
+            font-size: 20px;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #0FF0FC; /* Cyan Neon */
+            color: #0FF0FC;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .start-btn:hover {
+            background: #0FF0FC;
+            color: black;
+            box-shadow: 0px 0px 25px rgba(0, 255, 255, 1);
+            transform: scale(1.1);
+        }
+
+        /* Smooth fade-in effect */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles for small screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .start-btn {
+                font-size: 18px;
+                padding: 12px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="images/favvideo3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Landing Page Content -->
+    <div class="content fade-in">
+        <h1 class="display-4 fw-bold">MythBusters by Srinidhi</h1>
+        <p class="lead">Unveiling the truth behind myths and misconceptions</p>
+        <button class="start-btn" onclick="redirectToHome()">Enter</button>
+    </div>
+
+    <script>
+        function redirectToHome() {
+            window.location.href = "home.html"; // Redirect to your homepage
+        }
+    </script>
+
+</body>
+</html>
