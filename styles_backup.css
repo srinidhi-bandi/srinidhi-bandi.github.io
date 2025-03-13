@@ -1,0 +1,161 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+.nav-menu{
+    display:none;
+    left:0px !important;
+}   
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 50, 0.7);
+    padding: 10px 20px;
+}
+
+/* Left Section (Logo & Name) */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 30%;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Right Section (Navigation Buttons for large screens) */
+.nav-right {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button Styling */
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 8px 14px;
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Main Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    padding: 10px 20px;
+    background: rgba(173, 216, 230, 0.6);
+    border-radius: 10px;
+}
+
+/* 🔹 HAMBURGER MENU 🔹 */
+.hamburger {
+    font-size: 1.8em;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    color: white;
+}
+
+/* 🔹 MOBILE MENU 🔹 */
+.nav-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    margin-left:0px;
+    background: rgba(0, 0, 50, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    width: auto;
+}
+
+/* Show menu when active */
+.nav-menu.active {
+    display: flex;
+}
+
+/* 🔹 RESPONSIVE DESIGN 🔹 */
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.5rem;
+    }
+
+    .nav-left {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-right {
+        align-items: end;
+    }
+}
+
+@media (max-width: 425px) {
+    /* Show hamburger menu */
+    .hamburger {
+        display: block;
+        margin-left: 10px;
+    }
+
+    /* Hide normal navigation */
+    .nav-right {
+        display: none;
+    }
+}
+@media (max-width: 320px) {
+    /* Show hamburger menu */
+    .hamburger {
+        display: block;
+        margin-left: 10px;
+    }
+
+    /* Hide normal navigation */
+    .nav-right {
+        display: none;
+    }
+}
