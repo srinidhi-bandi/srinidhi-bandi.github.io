@@ -1,0 +1,219 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+.nav-menu{
+    display:none;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Pushes left and right sections apart */
+    align-items: center;
+    background: rgba(0, 0, 50, 0.7); /* Dark navy background with transparency */
+    padding: 10px 0px;
+}
+
+/* Left Section (Logo & Name) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    margin-right:100px;
+}
+
+.logo {
+    width: 40px; /* Adjust logo size */
+    height: auto;
+    margin-right: 10px;
+    border-radius:30%;
+    margin-left:20px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Right Section (Navigation Buttons) */
+.nav-right {
+    display: flex;
+    gap: 15px;
+    margin-right:20px; /* Ensures even spacing */
+}
+
+/* Button Styling */
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 8px 14px;
+    border: 2px solid white;
+    border-radius: 20px; /* Rounded corners */
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Main Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    padding: 10px 20px;
+    background: rgba(173, 216, 230, 0.6);
+    border-radius: 10px;
+}
+.hamburger {
+    font-size: 1.8em;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brand-name {
+        font-size: 1.5rem;
+        color: white;
+        font-weight: bold;
+    }
+    .nav-left{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:10px;
+    }
+    .nav-right{
+        align-items: end;
+        margin-right:10px;
+    }
+}
+@media (max-width: 426px) {
+    .nav-left{
+        margin-left:60px;
+    }
+    .hamburger{
+        display:inline;
+        margin-left:10px;
+        color: aliceblue;
+        cursor:pointer;
+    }
+    .nav-menu {
+        display: none; /* Hide initially */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        background: rgba(0, 0, 50, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+        width: auto;
+    }
+    
+    .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-right{
+        display:none;
+    }
+}
+@media (max-width: 376px) {
+    .nav-left{
+        margin-left:40px;
+    }
+    .hamburger{
+        display:inline;
+        margin-left:10px;
+        color: aliceblue;
+        cursor:pointer;
+    }
+    .nav-menu {
+        display: none; /* Hide initially */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        background: rgba(0, 0, 50, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+        width: auto;
+    }
+    
+    .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-right{
+        display:none;
+    }
+}
+@media (max-width: 321px) {
+    .nav-left{
+        margin-left:0px;
+    }
+    .hamburger{
+        display:inline;
+        margin-left:10px;
+        color: aliceblue;
+        cursor:pointer;
+    }
+    .nav-menu {
+        display: none; /* Hide initially */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        background: rgba(0, 0, 50, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+        width: auto;
+    }
+    
+    .nav-menu.active {
+        display: flex; /* Show when active */
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-right{
+        display:none;
+    }
+}
+
