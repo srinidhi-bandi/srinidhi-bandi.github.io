@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MythBusters Quiz</title>
+    <link rel="icon" href="hat2.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: aqua;
+            padding: 20px;
+        }
+        .quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin: auto;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .options {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover{
+            color:cyan;
+            background-color: rgb(51, 45, 45);
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        @media screen and (max-width:1441px)
+        {
+            .quiz-container{
+                width:90%;
+                height:1000px;
+            }
+        }
+        @media screen and (max-width:769px)
+        {
+            .quiz-container{
+                width:fit-content;
+                height:fit-content
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2>MythBusters Quiz</h2>
+
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">1. Can lightning strike the same place multiple times?</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="false"> False, it never strikes twice</label><br>
+                <label><input type="radio" name="q1" value="true"> True, it can hit the same place repeatedly</label><br>
+                <label><input type="radio" name="q1" value="rare"> Only on rare occasions</label><br>
+                <label><input type="radio" name="q1" value="only-tall"> Only tall buildings</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">2. Does water conduct electricity?</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="always"> Yes, always</label><br>
+                <label><input type="radio" name="q2" value="no"> No, pure water does not conduct electricity</label><br>
+                <label><input type="radio" name="q2" value="only-salt"> Only if it has salt or minerals</label><br>
+                <label><input type="radio" name="q2" value="depends"> It depends on temperature</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">3. Do ostriches bury their heads in the sand when scared?</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="true"> Yes, to hide from danger</label><br>
+                <label><input type="radio" name="q3" value="false"> No, they lower their heads but don’t bury them</label><br>
+                <label><input type="radio" name="q3" value="only-eggs"> Only to check their eggs</label><br>
+                <label><input type="radio" name="q3" value="in-wind"> Only when there’s strong wind</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">4. Does the moon have a dark side that never receives sunlight?</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="yes"> Yes, half of the moon is always dark</label><br>
+                <label><input type="radio" name="q4" value="no"> No, every part of the moon gets sunlight at some point</label><br>
+                <label><input type="radio" name="q4" value="only-eclipse"> Only during a lunar eclipse</label><br>
+                <label><input type="radio" name="q4" value="depends"> It depends on Earth’s position</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">5. Can an airplane door be opened mid-flight?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="yes"> Yes, with enough force</label><br>
+                <label><input type="radio" name="q5" value="no"> No, cabin pressure prevents it</label><br>
+                <label><input type="radio" name="q5" value="only-low"> Only at low altitude</label><br>
+                <label><input type="radio" name="q5" value="pilot"> Only the pilot can open it</label>
+            </div>
+
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            let answers = {
+                q1: "true",       // Lightning can strike the same place multiple times
+                q2: "no",         // Pure water does not conduct electricity
+                q3: "false",      // Ostriches do not bury their heads
+                q4: "no",         // The moon has no permanent dark side
+                q5: "no"          // Airplane doors cannot be opened mid-flight
+            };
+
+            for (let key in answers) {
+                let selectedOption = document.querySelector(`input[name="${key}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[key]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Your Score: " + score + "/5";
+        }
+    </script>
+
+</body>
+</html>
